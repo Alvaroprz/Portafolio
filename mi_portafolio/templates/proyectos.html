@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Proyectos - Mi Portafolio{% endblock %}
+
+{% block content %}
+    <h1>Mis Proyectos</h1>
+    <p>Aquí puedes ver algunos de los proyectos en los que he estado trabajando durante mi formación:</p>
+
+    <ul>
+        <li>
+            <h3>Pong</h3>
+            <p>Versión del clásico juego Pong hecho con Python y pygame</p>
+            <p><strong>Tecnologías:</strong> Python, pygame</p>
+            {% if 'enlace_codigo_1' %}
+            <p><a href="https://github.com/Alvaroprz/pong" target="_blank">Ver código en GitHub</a></p>
+            {% endif %}
+            </li>
+
+        <li>
+            <h3>Arkanoid</h3>
+            <p>Versión del clásico juego Arkanoid con pygame</p>
+            <p><strong>Tecnologías:</strong> Python, pygame</p>
+            {% if 'enlace_codigo_2' %}
+            <p><a href="https://github.com/Alvaroprz/ARKANOID" target="_blank">Ver código en GitHub</a></p>
+            {% endif %}
+        </li>
+
+        <li>
+            <h3>Este Portafolio Web</h3>
+            <p>Un portafolio personal desarrollado con Python y Flask para mostrar mis habilidades y proyectos.</p>
+            <p><strong>Tecnologías:</strong> Python, Flask, HTML, CSS</p>
+            <p><a href="https://github.com/Alvaroprz/Portafolio" target="_blank">Ver código en GitHub</a> </p>
+        </li>
+
+        </ul>
+{% endblock %}
