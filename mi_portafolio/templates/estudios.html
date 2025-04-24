@@ -4,10 +4,43 @@
 
 {% block content %}
     <h1>Mis Estudios</h1>
-    <p>Mi formación académica incluye:</p>
+    <p>Mi formación y aprendizaje actual se centran en las siguientes áreas:</p>
     <ul>
-        <li>[Año] - [Título Obtenido] en [Institución]</li>
-        <li>[Año] - [Título Obtenido] en [Institución] (si aplica)</li>
-        <li>...</li>
+        <li>
+            <strong>KeepCoding Bootcamp | Aprende a Programar desde Cero (Full Stack Jr.)</strong>
+            <p>Bootcamp intensivo de desarrollo Full Stack Jr. con un enfoque principal en el lenguaje Python.</p>
+            <p><strong>Tecnologías y Herramientas aprendidas:</strong></p>
+            <ul>
+                <li>Python (Lenguaje principal)</li>
+                <li>Flask (Framework de desarrollo web)</li>
+                <li>HTML (Estructura de la web)</li>
+                <li>CSS (Estilos visuales)</li>
+                <li>SQL (Bases de datos)</li>
+                <li>Git y GitHub (Control de versiones y colaboración)</li>
+            </ul>
+            <p>Duración: 03/02/2025  - 22/05/2025</p>
+        </li>
+        <li>
+            <strong>Campus 42 Madrid de Telefónica</strong>
+            <p>Programa de desarrollo de software basado en el aprendizaje práctico a través de proyectos y la colaboración entre estudiantes.</p>
+            <p>En este entorno, desarrollo proyectos en diversas áreas de la programación, con código fuente disponible en mi <a href="https://github.com/Alvaroprz/Personal_cursus42" target="_blank">perfil de GitHub</a>.</p>
+            <p>Lenguaje principal utilizado en proyectos: C</p>
+            <p>Duración: 07/04/2025 - (En curso)</p>
+        </li>
+        {% if has_formal_education %}
+        <li>
+            <strong>[Año] - [Título Obtenido] en [Institución]</strong>
+            <p>[Breve descripción de tus estudios formales si los tienes.]</p>
+        </li>
+        {% endif %}
+        {% if has_online_courses %}
+        <li>
+            <strong>[Año] - [Nombre del Curso] en [Plataforma]</strong>
+            <p>[Breve descripción del curso y las habilidades adquiridas.]</p>
+        </li>
+        {% endif %}
     </ul>
 {% endblock %}
+
+{% set has_formal_education = False %} {# Cambiar a True si tienes educación formal para mostrar #}
+{% set has_online_courses = False %} {# Cambiar a True si tienes cursos online relevantes para mostrar #}

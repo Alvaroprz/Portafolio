@@ -3,12 +3,46 @@
 {% block title %}Contacto - Mi Portafolio{% endblock %}
 
 {% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
     <h1>Contacto</h1>
-    <p>Puedes contactarme a través de:</p>
+    <p>¡No dudes en ponerte en contacto conmigo! Por favor, completa el siguiente formulario y te responderé lo antes posible.</p>
+
+    <form method="POST" action="/contacto">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+
+    <p>También puedes contactarme directamente a través de:</p>
     <ul>
-        <li>Email: [Tu Correo Electrónico]</li>
-        <li>LinkedIn: [Tu Perfil de LinkedIn (opcional)]</li>
-        <li>GitHub: [Tu Perfil de GitHub (opcional)]</li>
-        <li>...</li>
-    </ul>
+        <li>
+            <strong>Email:</strong> <a href="mailto:[TuCorreoElectrónico]">alvaroperezsaez7@hotmail.com</a>
+        </li>
+        {% if 'tu_linkedin' %}
+        <li>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/[TuPerfilDeLinkedIn]" target="_blank">[Tu Nombre en LinkedIn]</a>
+        </li>
+        {% endif %}
+        <li>
+            <strong>GitHub:</strong> <a href="https://github.com/Alvaroprz" target="_blank">Alvaroprz</a>
 {% endblock %}
+
+{% set tu_linkedin = False %}

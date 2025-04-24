@@ -3,7 +3,19 @@
 {% block title %}Inicio - Mi Portafolio{% endblock %}
 
 {% block content %}
-    <h1>¡Hola! Soy Alvaro Pérez</h1>
-    <p>Un apasionado de la informatica.</p>
-    <p>Bienvenido a mi portafolio donde muestro mis proyectos y comparto mi experiencia.</p>
-{% endblock %}
+    <section class="hero">
+        <div class="hero-image">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Tu Imagen de Perfil">
+        </div>
+        <div class="hero-content">
+            <h1>¡Hola! Soy Alvaro Pérez</h1>
+            <p class="lead">Desarrollador de software con una visión innovadora.</p>
+            <p>[Una breve y atractiva descripción sobre ti y lo que te apasiona.]</p>
+            <div class="hero-actions">
+                <a href="/proyectos" class="button primary">Ver mis Proyectos</a>
+                <a href="/contacto" class="button secondary">Contáctame</a>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
