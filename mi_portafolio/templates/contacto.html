@@ -1,48 +1,29 @@
 {% extends 'base.html' %}
 
-{% block title %}Contacto - Mi Portafolio{% endblock %}
+{% block title %}Contacto{% endblock %}
 
 {% block content %}
-{% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul class="flashes">
-        {% for category, message in messages %}
-          <li class="{{ category }}">{{ message }}</li>
-        {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-    <h1>Contacto</h1>
-    <p>¡No dudes en ponerte en contacto conmigo! Por favor, completa el siguiente formulario y te responderé lo antes posible.</p>
+<div class="contact-form-container">
+    <h2>Contacto</h2>
+    <p>¡Gracias por tu interés en contactarme! Aquí tienes algunas formas de ponerte en contacto:</p>
 
-    <form method="POST" action="/contacto">
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-        </div>
-        <button type="submit">Enviar Mensaje</button>
-    </form>
+    <div class="contact-info">
+        <ul>
+            <li>
+                <i class="fas fa-envelope"></i>
+                <strong>Email:</strong> <a href="mailto:tu_direccion_de_correo@ejemplo.com">tu_direccion_de_correo [arroba] ejemplo [punto] com</a>
+            </li>
+            <li>
+                <i class="fab fa-linkedin"></i>
+                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tu_perfil_de_linkedin" target="_blank">Mi perfil de LinkedIn</a>
+            </li>
+            <li>
+                <i class="fab fa-github"></i>
+                <strong>GitHub:</strong> <a href="https://github.com/tu_usuario_de_github" target="_blank">Mi GitHub</a>
+            </li>
+            </ul>
+    </div>
 
-    <p>También puedes contactarme directamente a través de:</p>
-    <ul>
-        <li>
-            <strong>Email:</strong> <a href="mailto:[TuCorreoElectrónico]">alvaroperezsaez7@hotmail.com</a>
-        </li>
-        {% if 'tu_linkedin' %}
-        <li>
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/[TuPerfilDeLinkedIn]" target="_blank">[Tu Nombre en LinkedIn]</a>
-        </li>
-        {% endif %}
-        <li>
-            <strong>GitHub:</strong> <a href="https://github.com/Alvaroprz" target="_blank">Alvaroprz</a>
+    <p>¡Espero tener noticias tuyas pronto!</p>
+</div>
 {% endblock %}
-
-{% set tu_linkedin = False %}

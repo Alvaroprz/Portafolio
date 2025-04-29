@@ -3,22 +3,37 @@
 {% block title %}Sobre Mí - Mi Portafolio{% endblock %}
 
 {% block content %}
-    <h1>Sobre Mí</h1>
-    <p>Soy un estudiante entusiasta en el mundo del desarrollo web, actualmente inmerso en un bootcamp de Python en KeepCoding. A través de este programa intensivo, estoy adquiriendo habilidades sólidas en la creación de aplicaciones y sitios web dinámicos con Python y sus frameworks.</p>
+    <section class="about-intro">
+        <div class="profile-image">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Mi Foto Personal">
+        </div>
+        <h1>Sobre Mí</h1>
+        <p>Soy un estudiante entusiasta en el mundo del desarrollo web, actualmente inmerso en un bootcamp de Python en KeepCoding y en el programa Campus 42 Madrid de Telefónica. Mi pasión por la tecnología y la creación de soluciones innovadoras me impulsa a seguir aprendiendo y creciendo en este campo.</p>
+    </section>
 
-    <p>Además de mi formación en KeepCoding, también soy estudiante en el innovador programa Campus 42 Madrid de Telefónica. Este entorno de aprendizaje único me permite desarrollar mis habilidades de programación de manera autónoma y colaborativa, fomentando la resolución de problemas y el aprendizaje continuo.En este entorno estoy utilizando el lenguaje C.</p>
+    <section class="skills">
+        <h2>Habilidades en Desarrollo (En Adquisición)</h2>
+        <p>Durante mi formación, he comenzado a desarrollar habilidades en:</p>
+        <ul class="skills-list">
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fas fa-code-branch"></i> Flask</li>
+            <li><i class="fas fa-code"></i> C</li>
+            <li><i class="fab fa-html5"></i> HTML</li>
+            <li><i class="fab fa-css3-alt"></i> CSS</li>
+        </ul>
+    </section>
 
-    <h2>Habilidades en Desarrollo (En Adquisición)</h2>
-    <p>Durante mi formación, he comenzado a desarrollar habilidades en:</p>
-    <ul>
-        <li>Python</li>
-        <li>Flask </li>
-        <li>C</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>GitHub</li>
-    </ul>
+    <section class="goals">
+        <h2>Mis Metas</h2>
+        <p>Mi objetivo es aplicar los conocimientos y habilidades que estoy adquiriendo para crear proyectos web significativos y seguir creciendo como desarrollador. Este portafolio es una muestra de mi progreso y de los proyectos en los que estoy trabajando.</p>
+    </section>
 
-    <h2>Mis Metas</h2>
-    <p>Mi objetivo es aplicar los conocimientos y habilidades que estoy adquiriendo para crear proyectos web significativos y seguir creciendo como desarrollador. Este portafolio es una muestra de mi progreso y de los proyectos en los que estoy trabajando.</p>
+    <section class="education-brief">
+        <h2>Formación Actual</h2>
+        <ul>
+            <li><strong>KeepCoding Bootcamp | Aprende a Programar desde Cero (Full Stack Jr.)</strong></li>
+            <li><strong>Campus 42 Madrid de Telefónica</strong></li>
+        </ul>
+        <p>Para más detalles sobre mi formación, puedes visitar la sección de <a href="/estudios">Estudios</a>.</p>
+    </section>
 {% endblock %}

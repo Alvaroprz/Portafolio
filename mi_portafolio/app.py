@@ -1,16 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
-# from flask_mail import Mail, Message  # Comentado por ahora
 
 app = Flask(__name__)
-app.secret_key = 'tu_clave_secreta'  # ¡Importante! Cambia esto por algo seguro
 
-# Configuración de Flask-Mail (comentado por ahora)
-# app.config['MAIL_SERVER'] = 'smtp.example.com'
-# app.config['MAIL_PORT'] = 587
-# app.config['MAIL_USE_TLS'] = True
-# app.config['MAIL_USERNAME'] = 'tu_correo@example.com'
-# app.config['MAIL_PASSWORD'] = 'tu_contraseña'
-# mail = Mail(app)
 
 @app.route('/')
 def index():
@@ -55,16 +46,8 @@ def proyectos():
     ]
     return render_template('proyectos.html', proyectos=lista_proyectos)
 
-@app.route('/contacto', methods=['GET', 'POST'])
+@app.route('/contacto')
 def contacto():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        email = request.form['email']
-        mensaje = request.form['mensaje']
-        print(f"Nuevo mensaje de: {nombre} <{email}>")
-        print(f"Mensaje: {mensaje}")
-        flash('¡Gracias por tu mensaje! Te responderé pronto.', 'success')
-        return redirect(url_for('contacto'))  # Redirigimos a la misma página
     return render_template('contacto.html')
 
 @app.route('/estudios')

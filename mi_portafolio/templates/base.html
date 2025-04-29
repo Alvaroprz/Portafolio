@@ -5,18 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Mi Portafolio{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <nav>
-        <a href="/">Inicio</a>
-        <a href="/sobre_mi">Sobre Mí</a>
-        <a href="/proyectos">Proyectos</a>
-        <a href="/estudios">Estudios</a>
-        <a href="/contacto">Contacto</a>
+        <div class="nav-toggle">
+            <button id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/sobre_mi">Sobre Mí</a></li>
+            <li><a href="/proyectos">Proyectos</a></li>
+            <li><a href="/estudios">Estudios</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+        </ul>
     </nav>
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; {{ year }} [Tu Nombre]. Todos los derechos reservados.</p>
+            <ul class="social-links">
+                {% if 'tu_linkedin' %}
+                <li><a href="https://www.linkedin.com/in/[TuPerfilDeLinkedIn]" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                {% endif %}
+                <li><a href="https://github.com/[TuUsuarioDeGitHub]" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                {% if 'otra_red_social' %}
+                <li><a href="[Enlace a tu perfil]" target="_blank"><i class="fas fa-share-alt"></i> [Nombre de otra red social]</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('footer p').textContent = document.querySelector('footer p').textContent.replace('{{ year }}', new Date().getFullYear());
+    </script>
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (hamburgerBtn && navLinks) {
+            hamburgerBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>

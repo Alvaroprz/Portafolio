@@ -4,43 +4,52 @@
 
 {% block content %}
     <h1>Mis Estudios</h1>
-    <p>Mi formación y aprendizaje actual se centran en las siguientes áreas:</p>
-    <ul>
-        <li>
-            <strong>KeepCoding Bootcamp | Aprende a Programar desde Cero (Full Stack Jr.)</strong>
-            <p>Bootcamp intensivo de desarrollo Full Stack Jr. con un enfoque principal en el lenguaje Python.</p>
-            <p><strong>Tecnologías y Herramientas aprendidas:</strong></p>
-            <ul>
-                <li>Python (Lenguaje principal)</li>
-                <li>Flask (Framework de desarrollo web)</li>
-                <li>HTML (Estructura de la web)</li>
-                <li>CSS (Estilos visuales)</li>
-                <li>SQL (Bases de datos)</li>
-                <li>Git y GitHub (Control de versiones y colaboración)</li>
-            </ul>
-            <p>Duración: 03/02/2025  - 22/05/2025</p>
-        </li>
-        <li>
-            <strong>Campus 42 Madrid de Telefónica</strong>
-            <p>Programa de desarrollo de software basado en el aprendizaje práctico a través de proyectos y la colaboración entre estudiantes.</p>
-            <p>En este entorno, desarrollo proyectos en diversas áreas de la programación, con código fuente disponible en mi <a href="https://github.com/Alvaroprz/Personal_cursus42" target="_blank">perfil de GitHub</a>.</p>
-            <p>Lenguaje principal utilizado en proyectos: C</p>
-            <p>Duración: 07/04/2025 - (En curso)</p>
-        </li>
-        {% if has_formal_education %}
-        <li>
-            <strong>[Año] - [Título Obtenido] en [Institución]</strong>
-            <p>[Breve descripción de tus estudios formales si los tienes.]</p>
-        </li>
-        {% endif %}
-        {% if has_online_courses %}
-        <li>
-            <strong>[Año] - [Nombre del Curso] en [Plataforma]</strong>
+    <p>Un resumen de mi formación académica y profesional:</p>
+
+    <section class="education-section">
+        <h2><i class="fas fa-graduation-cap"></i> Formación Actual</h2>
+        <div class="education-item">
+            <h3><i class="fas fa-laptop-code"></i> KeepCoding Bootcamp | Aprende a Programar desde Cero (Full Stack Jr.)</h3>
+            <p class="institution"><i class="fas fa-university"></i> KeepCoding</p>
+            <p class="duration"><i class="far fa-calendar-alt"></i> [Fecha de inicio del bootcamp] - [Fecha de fin estimado del bootcamp]</p>
+            <p>Programa intensivo enfocado en la adquisición de habilidades prácticas en Python, Flask y otras tecnologías relevantes para el desarrollo web.</p>
+            <p><strong>Tecnologías:</strong> <i class="fab fa-python"></i> Python, <i class="fas fa-code-branch"></i> Flask</li>, <i class="fab fa-html5"></i> HTML, <i class="fab fa-css3-alt"></i> CSS, <i class="fas fa-database"></i> SQL, <i class="fab fa-github"></i> Git, GitHub</p>
+        </div>
+
+        <div class="education-item">
+            <h3><i class="fas fa-code"></i> Programa de Desarrollo de Software</h3>
+            <p class="institution"><i class="fas fa-landmark"></i> Campus 42 Madrid de Telefónica</p>
+            <p class="duration"><i class="far fa-calendar-alt"></i> [Fecha de inicio en Campus 42] - (En curso)</p>
+            <p>Programa innovador y práctico basado en el aprendizaje entre pares y la resolución de proyectos, con un enfoque en diversas áreas de la programación, incluyendo el lenguaje C.</p>
+            <p><strong>Lenguaje principal:</strong> <i class="fa-sharp fa-solid fa-c"></i> </p>
+            <p>Proyectos disponibles en mi <a href="https://github.com/[TuUsuarioDeGitHub]" target="_blank"><i class="fab fa-github"></i> perfil de GitHub</a>.</p>
+        </div>
+    </section>
+
+    {% if has_formal_education %}
+    <section class="education-section">
+        <h2><i class="fas fa-book"></i> Educación Formal</h2>
+        <div class="education-item">
+            <h3>[Título Obtenido]</h3>
+            <p class="institution"><i class="fas fa-building"></i> [Institución]</p>
+            <p class="duration"><i class="far fa-calendar"></i> [Año] - [Año]</p>
+            <p>[Breve descripción de tus estudios formales.]</p>
+        </div>
+        </section>
+    {% endif %}
+
+    {% if has_online_courses %}
+    <section class="education-section">
+        <h2><i class="fas fa-play-circle"></i> Cursos Online y Certificaciones</h2>
+        <div class="education-item">
+            <h3>[Nombre del Curso]</h3>
+            <p class="institution"><i class="fas fa-globe"></i> [Plataforma]</p>
+            <p class="duration"><i class="far fa-clock"></i> [Año]</p>
             <p>[Breve descripción del curso y las habilidades adquiridas.]</p>
-        </li>
-        {% endif %}
-    </ul>
+        </div>
+        </section>
+    {% endif %}
 {% endblock %}
 
-{% set has_formal_education = False %} {# Cambiar a True si tienes educación formal para mostrar #}
-{% set has_online_courses = False %} {# Cambiar a True si tienes cursos online relevantes para mostrar #}
+{% set has_formal_education = False %}
+{% set has_online_courses = False %}
